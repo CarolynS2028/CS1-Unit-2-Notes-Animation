@@ -15,15 +15,38 @@
     to { background: rgb(255, 121, 127); }
  } 
  @keyframes colorchange-alt {
-    0% { background: burlywood; }
+    0% { background: rgb(252, 252, 158); }
     50% { background:rgb(255, 121, 127); }
-    100% { background: burlywood; }
+    100% { background: rgb(252, 252, 158); }
  }
  
- 
- 
- 
- 
+ /* STEP 1: Attach animation to an element, using a shortcut property "animation" that combines name, iterations, and timing function */ 
+
+ #animated-emoji {
+    animation: move-emoji 5s infinite ease-in-out; 
+    display: inline-block;
+    position: absolute;
+    top: 150px;
+    left: 95px;
+    font-size: 20px
+ }
+
+ /* STEP 2: define the animation sequence */
+ @keyframes move-emoji {
+    0% { 
+        transform: rotate (0deg);
+    }
+    50% {
+        transform: rotate (180deg) scale(1.5);
+        opacity: 0;
+    }
+    100% { 
+        transform: rotate(360deg);
+    }
+
+ }
+
+
  
  .box {
     background: rgb(250, 212, 217);
